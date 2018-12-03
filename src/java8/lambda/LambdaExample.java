@@ -22,13 +22,14 @@ public class LambdaExample {
 		});
 		printAll(list);
 		
+		System.out.println("Java8 : Print using for each ");
+		list.forEach(System.out::println);
 		System.out.println("Java8 : Sort by fist name ");
 		Collections.sort(list,
 				(o1, o2) -> o1.getFirstName().compareTo(o2.getFirstName()));
 
 		// create a method that prints all elements in list
-		printConditionlly(list,p->true);
-		
+		printConditionlly(list, p -> true);
 
 		// print all people that have last name start with S
 		System.out.println("Java7 : Print with S ");
@@ -44,8 +45,7 @@ public class LambdaExample {
 
 	}
 
-	private static void printConditionlly(List<Person> list,
-			Condition condition) {
+	private static void printConditionlly(List<Person> list, Condition condition) {
 		for (Person p : list) {
 			if (condition.test(p)) {
 				System.out.println(p.toString());
